@@ -14,7 +14,7 @@ builder.Services.AddMemoryCache();
 // Cache distribuído usando o Redis no Docker
 builder.Services.AddStackExchangeRedisCache(opt =>
 {
-    opt.Configuration = "localhost:6379";
+    opt.Configuration = builder.Configuration["Redis:ConnectionString"];
 });
 
 // Configuração do HybridCache
